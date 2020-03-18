@@ -7,6 +7,10 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+
+// Install BootstrapVue
+Vue.use(BootstrapVue);
 
 /**
  * The following block of code may be used to automatically register your
@@ -29,4 +33,10 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    methods:{
+        logout(){
+            document.getElementById('logout-form').submit();
+            // console.log(document.getElementById('logout-form'));
+        }
+    }
 });
