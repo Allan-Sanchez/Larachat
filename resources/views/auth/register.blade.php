@@ -7,6 +7,15 @@
             <b-card  title="{{ __('Register') }} " class="font-weight-bold">
 
                 <b-card-body>
+                    @if($errors->any())
+                      <b-alert variant="danger" show>
+                          <ul class="mb-0">
+                              @foreach ($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                              @endforeach
+                          </ul>
+                      </b-alert>
+                     @endif
                     <b-form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -50,7 +59,7 @@
                                     <label for="password">{{ __('Password') }}</label>
                                 </b-col>
                                 <b-col md="6">
-                                    <b-form-input type="text"
+                                    <b-form-input type="password"
                                     id="password" name="password" 
                                     value="{{ old('password') }}" autocomplete="new-password" required >
 

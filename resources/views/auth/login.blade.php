@@ -10,6 +10,16 @@
                     <b-row>
                         <b-col sm="12" md="2"></b-col>
                         <b-col sm="12" md="8">
+                           @if($errors->any())
+                            <b-alert variant="danger" show>
+                                <ul class="mb-0">
+                                    @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </b-alert>
+                           @endif
+
                             <b-form method="POST" action="{{ route('login') }}">
                                 @csrf
         
@@ -53,9 +63,11 @@
                                 <b-row>
                                     <b-col class="d-flex justify-content-end align-items-center">
                                         <b-button type="submit" variant="primary">{{ __('Login') }}</b-button>
+                                        @if (Route::has('password.request'))
                                         <b-link class="ml-2" href="{{ route('password.request') }}">
                                             {{ __('Forgot Your Password?') }}
                                         </b-link>
+                                        @endif
                                     </b-col>
                                 </b-row>
         
