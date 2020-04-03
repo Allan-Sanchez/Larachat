@@ -24,6 +24,10 @@ Vue.use(BootstrapVue);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('list-contact-message', require('./components/ListContactMessage').default);
+Vue.component('contact-message', require('./components/ContactMessage').default);
+Vue.component('message-board',require('./components/MessageBoard').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

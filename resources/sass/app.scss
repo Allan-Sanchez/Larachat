@@ -6,3 +6,74 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.notice {
+    padding: 15px;
+    background-color: #fafafa;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
+       -moz-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
+            box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
+}
+.notice-sm {
+    padding: 10px;
+    font-size: 80%;
+}
+.notice-lg {
+    padding: 35px;
+    font-size: large;
+}
+
+/* Primary */
+.notice-primary {
+    border-left: 6px solid #cce5ff !important;
+}
+.notice-primary>strong {
+    color: #004085;
+}
+
+.card-contact{
+    width: 100% !important;
+    height: 60px !important;
+}
+.card-contact-team{
+    width: 100% !important;
+    height: 100px !important;
+}
+.scroll_message{
+    height:360px;
+	overflow:auto;
+	padding:0px 15px;
+}
+
+.scroll_texting{
+	height:480px;
+	overflow:auto;
+	padding:0px 15px;
+}
+.scroll_text::-webkit-scrollbar {
+    width: 8px;
+}
+.scroll_text::-webkit-scrollbar-track {
+    background-color: #E7E7E7
+}
+.scroll_text::-webkit-scrollbar-thumb {
+background-color: rgba(223, 86, 86, 0.69);
+border: 1px solid rgba(92, 92, 92, 0.5);
+border-radius: 10px;
+}
+.scroll_text::-webkit-scrollbar-thumb:hover {
+    background-color: #004085;
+
+}
+
+//
+.btn-icon-style{
+    cursor: pointer;
+}
+.btn-icon-style svg g:hover {
+    fill: #004085;
+}
+.btn-icon-style svg:hover{
+    width: 40px;
+}

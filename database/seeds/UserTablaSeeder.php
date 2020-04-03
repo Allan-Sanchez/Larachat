@@ -17,5 +17,10 @@ class UserTablaSeeder extends Seeder
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('admin123')]);
+
+        User::create([
+            'name' => 'secretary',
+            'email' => 'secretary@gmail.com',
+            'password' => bcrypt('admin123')]);
     }
 }
