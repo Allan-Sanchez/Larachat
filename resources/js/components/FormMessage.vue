@@ -13,7 +13,7 @@
                                     </svg>
                                 </div>
 
-                                <div class="btn-icon-style">
+                                <div class="btn-icon-style" id="emoji-button" @click="toggleEmoji">
                                     <svg width="30" viewBox="0 0 48 48"><title>ic_insert_emoticon_48px</title>
                                         <g fill="#ccc">
                                             <path d="M23.99 4C12.94 4 4 12.95 4 24s8.94 20 19.99 20C35.04 44 44 35.05 44 24S35.04 4 23.99 4zM24 40c-8.84 0-16-7.16-16-16S15.16 8 24 8s16 7.16 16 16-7.16 16-16 16zm7-18c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm-14 0c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm7 13c4.66 0 8.61-2.91 10.21-7H13.79c1.6 4.09 5.55 7 10.21 7z"></path>
@@ -23,7 +23,7 @@
                             </div>
 
                             <div class="mx-2" style="width: 85%">
-                                <b-form-input  placeholder="Type your message" autofocus="" v-model="dataMessage" @keypress.enter="SendMessage()" ></b-form-input>
+                                <b-form-input id="messageContent"  placeholder="Type your message" autofocus="" v-model="dataMessage" @keypress.enter="SendMessage()" ></b-form-input>
                             </div>
 
                             <div class="btn-icon-style mx-1" @click="SendMessage()">
@@ -41,6 +41,15 @@
 </template>
 
 <script>
+import EmojiButton from '@joeattardi/emoji-button';
+const picker = new EmojiButton();
+
+picker.on('emoji', emoji => {
+                // this.dataMessage += emoji;
+              document.querySelector('#messageContent').value += emoji;
+              document.querySelector('#messageContent').focus();
+            });
+
 export default {
     data() {
         return {
@@ -62,7 +71,10 @@ export default {
                   this.dataMessage = '';
                 });
             }
-        }
+        },
+        toggleEmoji(){
+           picker.togglePicker(document.querySelector('#emoji-button'));
+        },
     },
 }
 </script>
