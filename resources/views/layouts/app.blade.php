@@ -47,7 +47,7 @@
                 @endif
 
              @else
-                <b-nav-item-dropdown class="ml-auto" text="{{ Auth::user()->name }}" right>
+                <b-nav-item-dropdown class="ml-auto" text="{{Auth::user()->name}}" right style="list-style: none;">
                     <b-dropdown-item href="{{ route('logout') }}"
                         @click.prevent="logout">
                             {{ __('Logout') }}
