@@ -24,7 +24,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "@joeattardi/emoji-button": "^2.12.1",
+        "@joeattardi/emoji-button": "^4.6.2",
         "bootstrap-vue": "^2.7.0",
         "timeago.js": "^4.0.2"
     }
